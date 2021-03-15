@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.75in}
+
+\usepackage{graphicx}
+\graphicspath{ {./Desktop/Notes/MA106} }
+
+\title{Gilbert Strang's Linear Algebra $5^{th}$ Edition}
+\author{Shubh Kumar}
+\date{$15^{th}$ of March, 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Challenge Problems(1.2):}
+\begin{itemize}
+  \item 30. The Given scenario is very much true in case of vectors in one plane. Consider 3 vectors each pointing to a vertex of an equilateral triangle centered at origin, and that would hold it true, as in case case : $\frac{\mathbf{u \cdot v}}{\|u\| \cdot \|v\|} = \frac{-1}{2}$ and similarly for the other two. \\
+  Considering the same thing in 3D-xyz plane would complicate things a bit, but with benefit of hindsight we know the case of Tetrahedron, which'll hold it true for four vectors poiting to its four vertices in which case: For All pair of vectors$(\mathbf{u,v}: \frac{\mathbf{u \cdot v}}{\|u\| \cdot \|v\|} = \cos(109.47) < 0)$
+  \\
+  Digging Deeper into the question, Back in the 2D case, we find that we won't be able to find 4 or more vectors which hold the condition true as now, Even while considering the symmetric case i.e. The Four Vectors pointing towards the vertices of a square, we'll have $\mathbf{u \cdot v} = 0$, and if we move anyone or more of those vectors, then if the dot product becomes negative for some of them, it'll always become positive for others. \\
+  With similar assertions in 3D, we conclude that we can't find any more than 4 such vectors, because if we try to do so in case of 5 or 6 vectors case, then we'll be unable to find any symmetric annalogues which uplhold these conditions.
+  \item 31. $x+y+z=0 \implies x^2 + y^2 + z^2 = -2xy -2xz -2yz$\\
+  $\implies \frac{xy+yz+xz}{x^2 + y^2 + z^2} = \frac{-1}{2} =  \frac{\mathbf{u \cdot v}}{\|u\| \cdot \|v\|}$ \\ This means that the angle is always $\frac{2\pi}{3}$
+
+  \item 32. The Given Inequality is actually wrong! A Counter Example would be: \\
+  $x = \frac{-y}{2}, z = \frac{-y}{2}, y > 0$ \\
+  LHS: $\frac{y}{2^{\frac{2}{3}}} > (y-\frac{-y}{2}-\frac{-y}{2}) = 0$
+
+  \item 33. The total 16 possibilites brought forward by $\big(\pm \frac{1}{2}, \pm \frac{1}{2},\pm \frac{1}{2},\pm \frac{1}{2}\big)$ would be lying in the 4-dimensional hyperplane with appropriate symmetry. \\
+  Hence, We can choose one arbitarily let it be $\big(\frac{1}{2},\frac{1}{2},\frac{1}{2},\frac{1}{2} \big)$ \\
+  Clearly one of the vectors perpendicular to it will be $\big(\frac{1}{2},\frac{-1}{2},\frac{-1}{2},\frac{1}{2} \big)$ \\
+  and another one perpendicular to both of them would be $\big(\frac{-1}{2},\frac{-1}{2},\frac{1}{2},\frac{1}{2} \big)$ \\
+  and finally one perpendicular to all three of these would be $\big(\frac{1}{2},\frac{1}{2},\frac{-1}{2},\frac{-1}{2} \big)$\\
+  Also observe that even if we replace the Second vector with $\big(\frac{-1}{2},\frac{1}{2},\frac{1}{2},\frac{-1}{2} \big)$. The Quadruplet of Vectors would still be mutually-perpendicular to each other.
+  \\ To Generalize, we can take any one vector(All +ve in above case), and generate a Quadruplet as:
+  $\big(\pm \frac{1}{2}, \pm \frac{1}{2},\pm \frac{1}{2},\pm \frac{1}{2}\big)$ , $\big(\pm \frac{1}{2}, \mp \frac{1}{2},\mp \frac{1}{2},\pm \frac{1}{2}\big)$ or $\big(\mp \frac{1}{2}, \pm \frac{1}{2},\pm \frac{1}{2},\mp \frac{1}{2}\big)$ , $\big(\pm \frac{1}{2}, \pm \frac{1}{2},\mp \frac{1}{2},\mp \frac{1}{2}\big)$ and $\big(\mp \frac{1}{2}, \mp \frac{1}{2},\pm \frac{1}{2},\pm \frac{1}{2}\big)$
+\end{itemize}
+
+\section{Challenge Problems(1.2):}
+\begin{itemize}
+  \item The Matrix C is \\ \\
+  $\begin{bmatrix}
+    0 && 1 && 0 && 0 && 0 \\
+    -1 && 0 && 1 && 0 && 0 \\
+    0 && -1 && 0 && 1 && 0 \\
+    0 && 0 && -1 && 0 && 1 \\
+    0 && 0 && 0 && -1 && 0
+
+  \end{bmatrix}$
+\end{itemize}
+
+\end{document}
