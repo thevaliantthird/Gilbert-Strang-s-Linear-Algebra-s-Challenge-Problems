@@ -55,6 +55,224 @@
     0 && 0 && 0 && -1 && 0
 
   \end{bmatrix}$
+  \\ Upon some observation it becomes clear that interchanging rows  $R_3 \leftarrow R_3 + R_1$, $R_5 \leftarrow R_5 + R_3$, we'll get 0 in the last row, which means that for the system $\mathbf{Cx = 0}$ to be consistent we must have $b_1 + b_3 + b_5 = 0$
+  \\ Also, it could be viewed as if $R_1, R_3$ and $R_5$ together form a linearly dependent system, whereas $R_2$ and $R_4$ are mutually independent, as well as independent w.r.t to the former set of dependent row vectors.
+  \item 14) We may write $(a,b) = (kc,kd) \implies (a,c) = (kc,c)$ and $(b,d) = (kd,d)$, So that clearly
+  $(a,c) = \frac{d}{c} \cdot (b,d)$
+
 \end{itemize}
+\section{Challenge Problems (2.1)}
+\begin{itemize}
+  \item 31) \textit{Lemma: } Exchanging two rows or two columns in a magic matrix won't change its property of being a magic matrix. (Easily Provable!) \\
+  Now, with that lemma, we can start setting one row of our matrix: \\
+  $\begin{bmatrix}
+    8 && 3 && 4 \\
+    ..  && .. && .. \\
+    .. && .. && .. \\
+  \end{bmatrix}$
+  \\ Let's start guessing the next row, Let's keep 1 in the next row, and we can make sure that, we can do this, as even if it weren't so, it would've been in row below that, and by the virtue of the lemma given above, it would enable us to exchange the two rows, without any worries. Let's take it to be at $a_{21}$:
+  \\
+  $\begin{bmatrix}
+    8 && 3 && 4 \\
+    1  && .. && .. \\
+    .. && .. && .. \\
+  \end{bmatrix}$
+  Now, we can construct the entire matrix by just this info: as upholding the condition in column 1, we must have $a_{31} = 6$, From the Left-Bottom to Top-Right Diagonal $a_{22} = 5$, From Second Row $a_{23} = 9$,
+  From the other diagonal we have, we have $a_{33} = 2$.
+  \\And Finally the moment of truth: If we put $a_{32} = 7$, which luckily!, fulfills all our requirements, hence the Matrix $M_3$ is:
+  $\begin{bmatrix}
+    8 && 3 && 4 \\
+    1  && 5 && 9 \\
+    6 && 7 && 2 \\
+  \end{bmatrix}$
+  \\If we multiply it by $\begin{bmatrix}1 && 1 && 1\end{bmatrix}^{T}$, then we'll get a column vector with the sum i.e. 15 as all its three elements.\\
+
+  Coming to the question about multiplying $M_4$ with the vector $[1,1,1,1]^{T}$, it would simply give me a 4-member column vector, with the sum of the Matrices' row/column/diagonal as all of its entries, which will be 34.
+  \item 32) The Matrix could be singular, only if the third column is a linear combination of the other two i.e. Third column $\mathbf{w} = \alpha_{1}\mathbf{u} + \alpha_{2}\mathbf{v}$.
+  \\
+  The Typical Row Picture would be such that, there will be infinite solutions, if $\mathbf{b_3} = \alpha_1 \mathbf{b_1} + \alpha_2\mathbf{b_3}$, and no solutions otherwise!
+
+  \item 33) Clearly, $5 \mathbf{u}+7 \mathbf{v} = \mathbf{w}$\\
+  $\implies \mathbf{Aw} = 5 \mathbf{Au} + 7 \mathbf{Av}$
+
+  \item 34) The Equation $\mathbf{Ax = b}$ for Given question would look like:\\
+
+
+
+  $
+  \begin{bmatrix}
+    2 && -1 && 0 && 0 \\
+    -1 && 2 && -1 &&  0 \\
+    0 && -1 && 2 && -1 \\
+    0 && 0 && -1 && 2 \\
+
+  \end{bmatrix}
+  \begin{bmatrix}
+      x_1 \\ x_2 \\ x_3 \\ x_4 \\
+  \end{bmatrix}
+   =
+   \begin{bmatrix}
+       1 \\ 2 \\ 3 \\ 4  \\
+   \end{bmatrix} $  \\
+
+    Applying $ R_{2} \leftarrow R_{2} + \frac{1}{2} R_{1}$ \\
+    $ R_{3} \leftarrow R_{3} + \frac{2}{3} R_{2}$  \\
+    $ R_{4} \leftarrow R_{4} + \frac{3}{4} R_{3}$ \\
+    $ R_{3} \leftarrow R_{3} + \frac{5}{4} R_{4}$ \\
+    $ R_{2} \leftarrow R_{2} + \frac{3}{4} R_{3} $ \\
+    $ R_{1} \leftarrow R_{1} + \frac{2}{3} R_{2} $
+    , We get
+    $
+    \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      0 && 1 && 0 &&  0 \\
+      0 && 0 && 1 && 0 \\
+      0 && 0 && 0 && 1 \\
+
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\ x_2 \\ x_3 \\ x_4 \\
+    \end{bmatrix}
+     =
+     \begin{bmatrix}
+         \frac{465}{96} \\ \frac{417}{48} \\ \frac{337}{32} \\ 6 \\
+     \end{bmatrix} $  \\
+
+     \item Multipying by the given \textbf{x} would simply mean summing up all rows, and putting those values in a column vector, hence, it would have a 9 by 1 column vector with each entry as 45. \\
+     In order for a row/column exchange to produce another Sudoku Matrix, we must have that the numbers contained in all 1x3 row-sections for row indices that differ by a factor for 3 are the same(even if order isn't!). Hence, we may exchange any to rows only if their indices differ by a factor of 3 and the same holds true for columns!
+
+\end{itemize}
+
+\section{Challenge Problems(2.2)}
+\begin{itemize}
+  \item 30) Assuming we didn't perform any Row exchanges in order to get the Pivot Matrix \textbf{U} from \textbf{A}, and also assuming that we didn't multiply this row by any number during the process(As, even if we did, we could view it in other way where we didn't), Then we could easily write that if A(5,5)  = 7, then the same row operations as before couldn've reduced it to 0 in the \textbf{U} matrix, giving singularity.
+  \item 31) The $j^{th}$ row of \textit{A} could be a linear combination of all the rows of \textit{A}. \\
+  If $A\mathbf{x}=0$ then $U\mathbf{x}=0$, but if $A\mathbf{x}=\mathbf{b}$ then that doesn't imply that $U\mathbf{x}=\mathbf{b}$, instead $A\mathbf{x}=\mathbf{a}$, where \textbf{a} is obtained by some row operations of the column matrix \textbf{b}. \\
+  If we start from a lower-triangular \textit{A}, then we would essentially get a Diagonal Matrix \textit{U} as the only upper-triangular matrix reachable by EROs.(excluding row exchange!)
+  \item 32)\\ a) 0 \\ b) 0 \\ c) Enumerate from 1 to 10000 as the entries of the matrix. Apply $R_2 \leftarrow R_2 - R_1$, $R_5 \leftarrow R_5 - R_4$ and then $R_5 \leftarrow R_5 - R_2$ to have a zero row in $R_2$ and hence a singular matrix with all non-zero, distinct entries. \\ d) Did in above answer itself! To state it formally, the $i^{th}$ row would consist of enumeration of all natural numbers from $100i-99$ to $100i$ and the $j^{th}$ column would have the $i^{th}$ entry in them as $j+100(i-1)$.
+\end{itemize}
+
+\section{Challenge Problems(2.3)}
+\begin{itemize}
+  \item 29) Clearly, the matrix \textit{E} would be obtained by the multiplication of Elementary Matrices which perform the Row-operation: $R_4 \leftarrow R_4 - R_3$, $R_3 \leftarrow R_3 - R_2$ and $R_2 \leftarrow R_2 - R_1$. i.e. The matrix: \\ \\
+  $\begin{bmatrix}
+    1 && 0 && 0 && 0 \\
+    -1 && 1 && 0 && 0 \\
+    0 && -1 && 1 && 0 \\
+    0 && 0 && -1 && 1 \\
+  \end{bmatrix}$ \\
+  Also, Note that the Matrix obtained after it could be converted to Identity by doing another two rounds on Matrix Manipulations, first of which shall have:   $R_4 \leftarrow R_4 - R_3$ and $R_3 \leftarrow R_3 - R_2$ and the second of which shall only have $R_4 \leftarrow R_4 - R_3$. \\
+  Applying the operations in the order needed and then Multiplying them, we get that \\ \\
+  M = $\begin{bmatrix}
+  1 && 0 && 0 && 0 \\
+  -1 && 1 && 0 && 0 \\
+  1 && -2 && 1 && 0 \\
+  -1 && 3 && -3 && 1 \\
+  \end{bmatrix}$
+  \item 30) Observe that multiplying any 2-by-2 matrix by the matrix \textit{A} would be equivalent to Keeping its first row  unchanged, and replacing the second row by the sum of the two rows. Similarly Multiplying by \textit{B} would keep the second row as it is, and have the sum of the two rows in the first. \\
+  a) The Matrix \textit{E} would be doing the inverse operation to that of matrix \textit{A}, and hence woudl be its exact inverse i.e. $\begin{bmatrix} 1 && 0 \\ -1 && 1 \\ \end{bmatrix}$ \\
+  b) Similarly \textit{F} would be the exact inverse of matrix \textit{B}, i.e.$\begin{bmatrix} 1 && -1 \\ 0 && 1 \\ \end{bmatrix}$ \\
+  c) Clearly multipying the matrices in the order $E \rightarrow F \rightarrow E \rightarrow E$, woul give me the matrix \textit{B}. \\
+  d) Thus, $M = BAABA$.
+  \item 31) Question unclear!
+
+\end{itemize}
+
+\section{Challenge Problems(2.4)}
+
+\begin{itemize}
+  \item 36) Trivial Question!
+  \item 37) Clearly, $BA = I = AC \implies AB = CA, then multiplying with C from left we get: C(AB) = C(CA) \implies C(AB) = C$ \\
+  Then using same logic as that given we prove associativity in this context and get $C(AB) = (CA)B \implies C(AB) = B$ \\
+  Combining that with what we had above, we'll get $B =C$
+  \item 38) \\ a) In order to solve this part, we need to first appreciate the fact that whenever we write $AB=C$, then the $i^{th}$ row of $C$ is a linear combination of all the rows of $B$, with their coefficients in combination as the corresoponding elements in the $i^{th}$ row of $A$.  \\
+  Now, with that in mind: \\
+  $A^{T} = \begin{bmatrix}\mathbf{a_1} && ... && ... \mathbf{a_m}\end{bmatrix}$ \\
+  $A = \begin{bmatrix}\mathbf{a_1^{T}} \\ . \\ . \\ \mathbf{a_m^{T}}\end{bmatrix}$ \\
+  Now, considering $A^{T}A$, the $i^{th}$ row of the product should be a linear combination of all the rows of $A$, and the contribution of the $j^{th}$ row of $A$ in the product shall be represented by the $i^{th}$ component of it, which is exactly what is given(for all the entries in the product matrix) when we represent this contribution by $\mathbf{a_1 a_1^{T}}$.
+
+\end{itemize}
+
+\section{Challenge Problems(2.5)}
+
+\begin{itemize}
+  \item 39) \\
+  $A = \begin{bmatrix}
+      1 && -a && 0 && 0 \\
+      0 && 1 && -b && 0 \\
+      0 && 0 && 1 && -c \\
+      0 && 0 && 0 && 1 \\
+   \end{bmatrix}$ \\ \\
+   $\implies  \begin{bmatrix}
+       1 && -a && 0 && 0 \\
+       0 && 1 && -b && 0 \\
+       0 && 0 && 1 && -c \\
+       0 && 0 && 0 && 1 \\
+    \end{bmatrix} A^{-1} =
+    \begin{bmatrix}
+    1 && 0 && 0 && 0 \\
+    0 && 1 && 0 && 0 \\
+    0 && 0 && 1 && 0 \\
+    0 && 0 && 0 && 1 \\
+    \end{bmatrix}$  \\
+    Applying $R_3 \leftarrow R_3 + cR_4$, $R_2 \leftarrow R_2 + bR_3$ and $R_1 \leftarrow R_1 + aR_2$. We get: \\ \\
+    $\begin{bmatrix}
+       1 && 0 && 0 && 0 \\
+       0 && 1 && 0 && 0 \\
+       0 && 0 && 1 && 0 \\
+       0 && 0 && 0 && 1 \\
+    \end{bmatrix} A^{-1} =
+    \begin{bmatrix}
+    1 && a && ab && abc \\
+    0 && 1 && b && bc \\
+    0 && 0 && 1 && c \\
+    0 && 0 && 0 && 1 \\
+    \end{bmatrix}$  \\
+    $\implies A^{-1} = \begin{bmatrix}
+    1 && a && ab && abc \\
+    0 && 1 && b && bc \\
+    0 && 0 && 1 && c \\
+    0 && 0 && 0 && 1 \\
+    \end{bmatrix}$
+    \item 40) $L = \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      a && 1 && 0 && 0 \\
+      b && 0 && 1 && 0 \\
+      c && 0 && 0 && 1 \\
+    \end{bmatrix} \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      0 && 1 && 0 && 0 \\
+      0 && d && 1 && 0 \\
+      0 && e && 0 && 1 \\
+    \end{bmatrix} \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      0 && 1 && 0 && 0 \\
+      0 && 0 && 1 && 0 \\
+      0 && 0 && f && 1 \\
+    \end{bmatrix}$ \\ \\
+    $\implies L =  \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      a && 1 && 0 && 0 \\
+      b && d && 1 && 0 \\
+      c && e && 0 && 1 \\
+    \end{bmatrix} \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      0 && 1 && 0 && 0 \\
+      0 && 0 && 1 && 0 \\
+      0 && 0 && f && 1 \\
+    \end{bmatrix}$  \\  \\
+    $\implies L =  \begin{bmatrix}
+      1 && 0 && 0 && 0 \\
+      a && 1 && 0 && 0 \\
+      b && d && 1 && 0 \\
+      c && e && f && 1 \\
+    \end{bmatrix} $   \\
+    The matrices $E_1$, $E_2$ and $E_3$ are all elementary matrices and thus can be viewed as a set of EORs on Identity matrices. The Final Matrix $L$ corresponds to the operations: \\
+    $R_4 \leftarrow R_4 + fR_3 + eR_2 + cR_1$, $R_3 \leftarrow R_3 + bR_1 + dR_2$ and $R_2 \leftarrow R_2 + aR_1$ \\
+\end{itemize}
+
+\section{Challenge Problems(3.1)}
+
+
 
 \end{document}
