@@ -272,7 +272,19 @@
 \end{itemize}
 
 \section{Challenge Problems(3.1)}
+  \begin{itemize}
+    \item 30) \\
+    a) The Null Vector is a part of all subspaces, hence the vector space $\mathbf{U} = \mathbf{S+T}$ essentially contains both the subspaces \textbf{S} and \textbf{T}. That means the Scalar Multiplication is property already holds, as for any vector $\mathbf{a} \in \mathbf{S}$ or $\mathbf{T}$, as for vectors which are neither of these but instead a sum of two vectors from each, we have for all $\mathbf{s} \in \mathbf{S} \implies \alpha \mathbf{s} \in \mathbf{S}$ and similarly for all $\mathbf{t} \in \mathbf{T} \implies \alpha \mathbf{t} \in \mathbf{T}$ , and hence if $\mathbf{s} \in \mathbf{S}$ and $\mathbf{t} \in \mathbf{T}$, we have $\mathbf{s+t} \in \mathbf{S+T}$ and so does $\alpha (\mathbf{s + t})$, which prove the Scalar Multiplication part. \\~\\
+    As for the addition part, then its already prove for three cases i.e. if \textbf{a} and \textbf{b} both come from the same subspace, or of they come from different subspaces(by the definition of the Sum!), the only case which remains is when one or both of the vectors \textbf{a} and \textbf{b} are part of neither subsets, but even in that case, we would easily be able to decompose the vectors \textbf{a} and \textbf{b} into a sum of vectors which come from the two subspaces and are hence themselves a part of them and are thus proved by the first case described above. \\~\\
 
+    b) $\mathbf{S} \cup \mathbf{T}$ won't have any vectors of the form \textbf{s+t}, where $\mathbf{s} \in \mathbf{S}$ and $\mathbf{t} \in \mathbf{T}$ (when the two subspaces are such that they can't have common bases, in which case, the two subspaces are essentially identical!), But $\mathbf{S+T}$ would still contain all of $\mathbf{S} \cup \mathbf{T}$, as The Null Vector is a part of all subspaces, hence the vector space $\mathbf{U} = \mathbf{S+T}$ essentially contains both the subspaces \textbf{S} and \textbf{T}. \\~\\
+    We will also have that the bases of both $\mathbf{S}$ and $\mathbf{T}$ are included in $\mathbf{S} \cup \mathbf{T}$, and hence, I could write any vector which can be there in $\mathbf{S+T}$ using their linear Combinations so that span of $\mathbf{S} \cup \mathbf{T}$ is $\mathbf{S+T}$.
+
+    \item 31) The Matrix $M = \begin{bmatrix}
+      A && B
+    \end{bmatrix} would always be a Matrix whose Column space is \mathbf{S+T}. It might be expressable as a matrix with lesser number of columns depending on whether what's the rank of A and B, as well as on if there could be some common vectors in the bases of \mathbf{S} and \mathbf{T}.$
+
+  \end{itemize}
 
 
 \end{document}
